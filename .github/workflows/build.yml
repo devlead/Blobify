@@ -45,7 +45,7 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           AZURE_AUTHORITY_HOST: "https://login.microsoftonline.com"
           AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_STORAGE_ACCOUNT }}
-          AZURE_STORAGE_ACCOUNT_CONTAINER: ${{ secrets.AZURE_STORAGE_ACCOUNT_CONTAINER }}
+          AZURE_STORAGE_ACCOUNT_CONTAINER: ${{ secrets.AZURE_STORAGE_ACCOUNT_CONTAINER }}${{ matrix.os }}
         with:
           cake-version: tool-manifest
           target: GitHub-Actions
