@@ -179,9 +179,10 @@ Task("Clean")
                                                         .Append("--")
                                                         .Append("blobify")
                                                         .Append("archive")
-                                                        .AppendQuoted(data.IntegrationTestPath.FullPath)
+                                                        .AppendQuoted(data.ArtifactsPath.FullPath)
                                                         .AppendQuotedSecret(data.AzureStorageAccount)
-                                                        .AppendQuotedSecret(data.AzureStorageAccountContainer),
+                                                        .AppendQuotedSecret(data.AzureStorageAccountContainer)
+                                                        .AppendSwitchQuoted("--file-pattern", "**/dotnet-tools.json"),
                     WorkingDirectory = data.IntegrationTestPath
                 }
             )

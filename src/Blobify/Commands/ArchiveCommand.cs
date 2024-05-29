@@ -2,7 +2,6 @@
 using Blobify.Services.Storage;
 using Cake.Common.IO;
 using Cake.Common.Security;
-using Microsoft.Extensions.Logging;
 using System.Net.Http.Headers;
 
 namespace Blobify.Commands;
