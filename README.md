@@ -2,6 +2,12 @@
 
 Blobify is a .NET Global tool that archives (moves) files from a local folder to Azure Blob Storage container.
 
+## Obtain
+
+```bash
+dotnet tool install -g Blobify
+```
+
 ## Usage
 
     blobify archive <inputpath> <azureStorageAccount> <azureStorageAccountContainer> [OPTIONS]
