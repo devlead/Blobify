@@ -14,7 +14,7 @@ dotnet tool install -g Blobify
 
 ### Example
 
-    blobify archive inputpath storageaccountname
+    blobify archive inputpath storageaccountname storagecontainer
 
 ### Arguments
 
