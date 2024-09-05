@@ -1,6 +1,4 @@
-﻿using Azure;
-using System.Net;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
 
 namespace Blobify.Services.Storage;

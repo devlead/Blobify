@@ -1,0 +1,234 @@
+[
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://blobify.tests/Services/Storage/TokenServiceTests/GetAsync"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Services.Storage.TokenServiceTests.GetAsyncString.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "HEAD"
+        }
+      ],
+      "AbsoluteUri": "https://blobify.tests/Services/Storage/TokenServiceTests/HeadAsync"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "PUT"
+        }
+      ],
+      "AbsoluteUri": "https://blobify.tests/Services/Storage/TokenServiceTests/PutAsync"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 202
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "HEAD"
+        }
+      ],
+      "AbsoluteUri": "https://azurestorageaccount.blob.core.windows.net/AzureStorageAccountContainer/?restype=container"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentType": "application/json",
+        "ContentHeaders": {
+          "x-ms-version": [ "2024-05-04" ],
+          "x-ms-request-id": [ "197a6f73-c01e-0176-612c-ceab32000000" ],
+          "x-ms-lease-status": [ "unlocked" ],
+          "x-ms-lease-state": [ "available" ],
+          "x-ms-immutable-storage-with-versioning-enabled": [ "false" ],
+          "x-ms-has-legal-hold": [ "false" ],
+          "x-ms-has-immutability-policy": [ "false" ],
+          "x-ms-deny-encryption-scope-override": [ "false" ],
+          "x-ms-default-encryption-scope": [ "$account-encryption-key" ],
+          "Server": [ "Windows-Azure-Blob/1.0", "Microsoft-HTTPAPI/2.0" ],
+          "ETag": [ "0x8DC7FB978A480F9" ],
+          "Date": [ "Thu, 04 Jul 2024 16:10:08 GMT" ]
+        },
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "HEAD"
+        }
+      ],
+      "AbsoluteUri": "https://azurestorageaccount.blob.core.windows.net/AzureStorageAccountContainer/ExistingFile.json"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentType": "application/json",
+        "ContentResource": "Commands.ArchiveCommandTests.ExistingFiles.ExistingFile.json",
+        "ContentHeaders": {
+          "Last-Modified": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "Date": [ "Thu, 04 Jul 2024 16:39:57 GMT" ],
+          "ETag": [ "0x8DC9BAC719D2469" ],
+          "Server": [ "Windows-Azure-Blob/1.0", "Microsoft-HTTPAPI/2.0" ],
+          "x-ms-access-tier": [ "Hot" ],
+          "x-ms-access-tier-inferred": [ "true" ],
+          "x-ms-blob-type": [ "BlockBlob" ],
+          "x-ms-creation-time": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "x-ms-lease-state": [ "available" ],
+          "x-ms-lease-status": [ "unlocked" ],
+          "x-ms-request-id": [ "14fdc4b0-001e-0179-5930-cedd5e000000" ],
+          "x-ms-server-encrypted": [ "true" ],
+          "x-ms-version": [ "2024-05-04" ]
+        },
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "PUT"
+        }
+      ],
+      "AbsoluteUri": "https://azurestorageaccount.blob.core.windows.net/AzureStorageAccountContainer/NewFile.json"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {
+          "Content-Type": [ "application/json" ],
+          "Content-Length": [ "9" ],
+          "x-ms-blob-type": [ "BlockBlob" ],
+          "Content-MD5": [ "uasiD3l1Rg7NApFvCBOV1Q==" ]
+        },
+        "ContentType": "application/json",
+        "ContentResource": "Commands.ArchiveCommandTests.NewFiles.NewFile.json",
+        "ContentHeaders": {
+          "Last-Modified": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "Date": [ "Thu, 04 Jul 2024 16:39:57 GMT" ],
+          "ETag": [ "0x8DC9BAC719D2469" ],
+          "Server": [ "Windows-Azure-Blob/1.0", "Microsoft-HTTPAPI/2.0" ],
+          "x-ms-access-tier": [ "Hot" ],
+          "x-ms-access-tier-inferred": [ "true" ],
+          "x-ms-blob-type": [ "BlockBlob" ],
+          "x-ms-creation-time": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "x-ms-lease-state": [ "available" ],
+          "x-ms-lease-status": [ "unlocked" ],
+          "x-ms-request-id": [ "14fdc4b0-001e-0179-5930-cedd5e000000" ],
+          "x-ms-server-encrypted": [ "true" ],
+          "x-ms-version": [ "2024-05-04" ]
+        },
+        "StatusCode": 201,
+        "EnableRequests": [
+          {
+            "Method": "HEAD",
+            "AbsoluteUri": "https://azurestorageaccount.blob.core.windows.net/AzureStorageAccountContainer/NewFile.json"
+          }
+        ]
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "HEAD"
+        }
+      ],
+      "AbsoluteUri": "https://azurestorageaccount.blob.core.windows.net/AzureStorageAccountContainer/NewFile.json",
+      "Disabled": true
+    },
+    "Responses": [
+      {
+        "RequestHeaders": { },
+        "ContentType": "application/json",
+        "ContentResource": "Commands.ArchiveCommandTests.NewFiles.NewFile.json",
+        "ContentHeaders": {
+          "Last-Modified": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "Date": [ "Thu, 04 Jul 2024 16:39:57 GMT" ],
+          "ETag": [ "0x8DC9BAC719D2469" ],
+          "Server": [ "Windows-Azure-Blob/1.0", "Microsoft-HTTPAPI/2.0" ],
+          "x-ms-access-tier": [ "Hot" ],
+          "x-ms-access-tier-inferred": [ "true" ],
+          "x-ms-blob-type": [ "BlockBlob" ],
+          "x-ms-creation-time": [ "Wed, 03 Jul 2024 22:06:52 GMT" ],
+          "x-ms-lease-state": [ "available" ],
+          "x-ms-lease-status": [ "unlocked" ],
+          "x-ms-request-id": [ "14fdc4b0-001e-0179-5930-cedd5e000000" ],
+          "x-ms-server-encrypted": [ "true" ],
+          "x-ms-version": [ "2024-05-04" ]
+        },
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  }
+]
