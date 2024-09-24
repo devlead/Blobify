@@ -360,3 +360,8 @@ src/ARI.TestWeb/output/
 
 # Rider/ReSharper temp
 src/.idea/
+
+
+# Verify
+*.received.*
+*.received/
