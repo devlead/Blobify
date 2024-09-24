@@ -48,8 +48,7 @@ public class TokenServiceTests
             );
 
         // Then
-        await Verify(result)
-            .DontIgnoreEmptyCollections();
+        await Verify(result);
     }
 
     [Test]
@@ -65,7 +64,6 @@ public class TokenServiceTests
             );
 
         // Then
-        await Verify(result)
-            .DontIgnoreEmptyCollections();
+        await Verify(result);
     }
 }
