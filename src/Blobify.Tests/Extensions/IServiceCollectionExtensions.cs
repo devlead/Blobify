@@ -238,7 +238,6 @@ public class Routes
 
                         return response;
                     }
-                        
 
                     var responseFunc = new Func<HttpRequestMessage, HttpResponseMessage>(
                         request =>

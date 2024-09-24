@@ -7,13 +7,11 @@ public class ArchiveCommandTests
 {
     public class NoFiles
     {
-
         [Test]
         public async Task ExecuteAsync()
         {
             // Given
             var (archiveCommand, settings) = BlobifyServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings>();
-            
 
             // When
             var result = await archiveCommand.ExecuteAsync(
