@@ -68,7 +68,7 @@ public class ArchiveCommand(
 
                 var hash = cakeContext.CalculateFileHash(filePath, HashAlgorithm.MD5);
 
-                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri))
+                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri, ct))
                 {
                     case (HttpStatusCode.NotFound, _, _):
                         {
@@ -83,7 +83,7 @@ public class ArchiveCommand(
                             };
                             content.Headers.TryAddWithoutValidation("x-ms-blob-type", "BlockBlob");
 
-                            switch (await tokenService.PutAsync(settings.AzureTenantId, targetUri, content))
+                            switch (await tokenService.PutAsync(settings.AzureTenantId, targetUri, ct, content))
                             {
                                 case (HttpStatusCode.Created, _, _):
                                     logger.LogInformation("Blob {File} uploaded", targetPath.FullPath);
