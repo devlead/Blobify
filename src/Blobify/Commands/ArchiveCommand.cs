@@ -29,7 +29,7 @@ public class ArchiveCommand(
         var files = cakeContext.GetFiles(searchPattern);
 
         logger.LogInformation("Found {FileCount} files.", files.Count);
-        
+
         if(files.Count == 0)
         {
             logger.LogInformation("No files found, exiting...");
@@ -74,7 +74,7 @@ public class ArchiveCommand(
                         {
                             logger.LogInformation("Blob {File} not found, uploading...", targetPath.FullPath);
                             using var stream = file.OpenRead();
-                            using var content = new StreamContent(stream) { 
+                            using var content = new StreamContent(stream) {
                                 Headers = {
                                     ContentType = new MediaTypeHeaderValue(contentType),
                                     ContentLength = file.Length,
