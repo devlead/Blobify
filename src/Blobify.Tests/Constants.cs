@@ -8,12 +8,6 @@ public static class Constants
     public static class Request
     {
         public static readonly Uri BaseUri = new ("https://blobify.tests/", UriKind.Absolute);
-
-        public static class Authorization
-        {
-            public static readonly KeyValuePair<string, StringValues>? Authorized = new ("Authorization", "Bearer AccessToken");
-            public static readonly KeyValuePair<string, StringValues>? UnAuthorized = null;
-        }
     }
 
     public static class MediaType
