@@ -97,7 +97,7 @@ public class TokenService(
         HttpContent? content = null
         )
     {
-        var httpClient = GetBearerTokenHttpClient(
+        using var httpClient = GetBearerTokenHttpClient(
             await GetAzureToken(tenantId),
             null,
             null
