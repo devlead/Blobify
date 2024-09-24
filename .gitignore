@@ -357,3 +357,6 @@ launchSettings.json
 src/ARI.TestWeb/theme/
 src/ARI.TestWeb/cache/
 src/ARI.TestWeb/output/
+
+# Rider/ReSharper temp
+src/.idea/
