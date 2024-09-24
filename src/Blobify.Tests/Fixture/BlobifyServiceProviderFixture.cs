@@ -125,7 +125,7 @@ public class BlobifyServiceProviderFixture
             .AddLogging()
             .AddCakeFakes()
             .AddSingleton<AzureTokenService>(
-                (tenantId, scope) => Task.FromResult(new AccessToken(nameof(AccessToken), DateTimeOffset.UtcNow.AddDays(1)))
+                (_, _) => Task.FromResult(new AccessToken(nameof(AccessToken), DateTimeOffset.UtcNow.AddDays(1)))
             )
             .AddSingleton<TokenService>()
             .AddSingleton<ArchiveCommand>()

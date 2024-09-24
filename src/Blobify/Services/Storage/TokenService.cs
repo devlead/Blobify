@@ -67,6 +67,7 @@ public class TokenService(
     public async Task<T> GetAsync<T>(
         string? tenantId,
         Uri url,
+        CancellationToken cancellationToken = default,
         string? accept = "application/json"
     )
     {
@@ -76,24 +77,27 @@ public class TokenService(
             null
             );
 
-        return await GetFromJsonAsync<T>(httpClient, url);
+        return await GetFromJsonAsync<T>(httpClient, url, cancellationToken);
     }
 
     public Task<(HttpStatusCode StatusCode, ILookup<string, string> Headers, byte[]? ContentMD5)> HeadAsync(
          string? tenantId,
-         Uri url
-    ) => SendAsync(tenantId, url, HttpMethod.Head);
+         Uri url,
+         CancellationToken cancellationToken = default
+    ) => SendAsync(tenantId, url, HttpMethod.Head, cancellationToken);
 
     public Task<(HttpStatusCode StatusCode, ILookup<string, string> Headers, byte[]? ContentMD5)> PutAsync(
-         string? tenantId,
-         Uri url,
+        string? tenantId,
+        Uri url,
+        CancellationToken cancellationToken = default,
         HttpContent? content = null
-    ) => SendAsync(tenantId, url, HttpMethod.Put, content);
+    ) => SendAsync(tenantId, url, HttpMethod.Put, cancellationToken, content);
 
     private async Task<(HttpStatusCode StatusCode, ILookup<string, string> Headers, byte[]? ContentMD5)> SendAsync(
         string? tenantId,
         Uri url,
         HttpMethod method,
+        CancellationToken cancellationToken,
         HttpContent? content = null
         )
     {
@@ -102,7 +106,8 @@ public class TokenService(
             null,
             null
             );
-        var response = await httpClient.SendAsync(
+
+        using var response = await httpClient.SendAsync(
             new HttpRequestMessage(
                 method,
                 url
@@ -110,8 +115,10 @@ public class TokenService(
             {
                 Content = content
             },
-            HttpCompletionOption.ResponseHeadersRead
+            HttpCompletionOption.ResponseHeadersRead,
+            cancellationToken
         );
+
         return (
             response.StatusCode,
             (
@@ -126,9 +133,9 @@ public class TokenService(
         );
     }
 
-    private static async Task<T> GetFromJsonAsync<T>(HttpClient httpClient, Uri url)
+    private static async Task<T> GetFromJsonAsync<T>(HttpClient httpClient, Uri url, CancellationToken cancellationToken)
     {
-        var result = await httpClient.GetFromJsonAsync<T>(url);
+        var result = await httpClient.GetFromJsonAsync<T>(url, cancellationToken);
 
         ArgumentNullException.ThrowIfNull(result);
 

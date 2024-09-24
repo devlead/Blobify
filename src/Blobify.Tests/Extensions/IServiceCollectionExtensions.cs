@@ -115,7 +115,7 @@ public static class  Resources
             );
 
 
-    private static byte[] GetResourceBytes(string filename, Encoding? encoding = null)
+    private static byte[] GetResourceBytes(string filename)
     {
         using var stream = GetResourceStream(filename);
         using var targetStream = new MemoryStream();
@@ -238,7 +238,6 @@ public class Routes
 
                         return response;
                     }
-                        
 
                     var responseFunc = new Func<HttpRequestMessage, HttpResponseMessage>(
                         request =>

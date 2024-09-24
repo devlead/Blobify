@@ -29,7 +29,7 @@ public class ArchiveCommand(
         var files = cakeContext.GetFiles(searchPattern);
 
         logger.LogInformation("Found {FileCount} files.", files.Count);
-        
+
         if(files.Count == 0)
         {
             logger.LogInformation("No files found, exiting...");
@@ -68,13 +68,13 @@ public class ArchiveCommand(
 
                 var hash = cakeContext.CalculateFileHash(filePath, HashAlgorithm.MD5);
 
-                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri))
+                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri, ct))
                 {
                     case (HttpStatusCode.NotFound, _, _):
                         {
                             logger.LogInformation("Blob {File} not found, uploading...", targetPath.FullPath);
                             using var stream = file.OpenRead();
-                            using var content = new StreamContent(stream) { 
+                            using var content = new StreamContent(stream) {
                                 Headers = {
                                     ContentType = new MediaTypeHeaderValue(contentType),
                                     ContentLength = file.Length,
@@ -83,7 +83,7 @@ public class ArchiveCommand(
                             };
                             content.Headers.TryAddWithoutValidation("x-ms-blob-type", "BlockBlob");
 
-                            switch (await tokenService.PutAsync(settings.AzureTenantId, targetUri, content))
+                            switch (await tokenService.PutAsync(settings.AzureTenantId, targetUri, ct, content))
                             {
                                 case (HttpStatusCode.Created, _, _):
                                     logger.LogInformation("Blob {File} uploaded", targetPath.FullPath);
@@ -111,7 +111,7 @@ public class ArchiveCommand(
                 switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri))
                 {
                     case (HttpStatusCode.OK, _, byte[] md5Hash):
-                           if (md5Hash.SequenceEqual(hash.ComputedHash))
+                        if (md5Hash.SequenceEqual(hash.ComputedHash))
                         {
                             logger.LogInformation("Blob {File} found and hash match deleting...", targetPath.FullPath);
                             file.Delete();
@@ -120,6 +120,7 @@ public class ArchiveCommand(
                         {
                             throw new Exception($"Blob {targetPath.FullPath} found blob but hash mismatch, won't delete.");
                         }
+
                         return;
                 }
             }
