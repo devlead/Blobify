@@ -111,7 +111,7 @@ public class ArchiveCommand(
                 switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri))
                 {
                     case (HttpStatusCode.OK, _, byte[] md5Hash):
-                           if (md5Hash.SequenceEqual(hash.ComputedHash))
+                        if (md5Hash.SequenceEqual(hash.ComputedHash))
                         {
                             logger.LogInformation("Blob {File} found and hash match deleting...", targetPath.FullPath);
                             file.Delete();
@@ -120,6 +120,7 @@ public class ArchiveCommand(
                         {
                             throw new Exception($"Blob {targetPath.FullPath} found blob but hash mismatch, won't delete.");
                         }
+
                         return;
                 }
             }
