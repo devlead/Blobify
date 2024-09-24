@@ -58,7 +58,7 @@ app.Configure(
                 .WithExample(["archive", "inputpath", "storageaccountname"]);
 
         config.SetExceptionHandler(
-            (ex, typeResolver) => AnsiConsole.WriteException(ex, ExceptionFormats.ShowLinks)
+            (ex, _) => AnsiConsole.WriteException(ex, ExceptionFormats.ShowLinks)
             );
     });
 
