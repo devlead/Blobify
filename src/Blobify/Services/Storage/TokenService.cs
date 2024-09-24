@@ -106,7 +106,8 @@ public class TokenService(
             null,
             null
             );
-        var response = await httpClient.SendAsync(
+
+        using var response = await httpClient.SendAsync(
             new HttpRequestMessage(
                 method,
                 url
@@ -117,6 +118,7 @@ public class TokenService(
             HttpCompletionOption.ResponseHeadersRead,
             cancellationToken
         );
+
         return (
             response.StatusCode,
             (
