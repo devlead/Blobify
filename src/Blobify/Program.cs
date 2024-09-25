@@ -50,6 +50,7 @@ var app = new CommandApp(registrar);
 app.Configure(
     config =>
     {
+        config.UseAssemblyInformationalVersion();
         config.SetApplicationName("blobify");
         config.ValidateExamples();
 
