@@ -108,7 +108,7 @@ public class ArchiveCommand(
                         throw new Exception($"Failed to check blob {targetUri}");
                 }
 
-                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri))
+                switch (await tokenService.HeadAsync(settings.AzureTenantId, targetUri, ct))
                 {
                     case (HttpStatusCode.OK, _, byte[] md5Hash):
                         if (md5Hash.SequenceEqual(hash.ComputedHash))
