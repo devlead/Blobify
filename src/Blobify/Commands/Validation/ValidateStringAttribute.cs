@@ -2,7 +2,7 @@ namespace Blobify.Commands.Validation;
 
 public class ValidateStringAttribute : ParameterValidationAttribute
 {
-    public const int MinimumLength = 3;
+    private const int MinimumLength = 3;
     private static readonly (bool IsString, bool IsMinimumLength, string Value) InvalidStringValue = (false, false, string.Empty);
 
 #nullable disable
