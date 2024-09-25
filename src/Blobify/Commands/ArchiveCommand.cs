@@ -73,8 +73,8 @@ public class ArchiveCommand(
                     case (HttpStatusCode.NotFound, _, _):
                         {
                             logger.LogInformation("Blob {File} not found, uploading...", targetPath.FullPath);
-                            using var stream = file.OpenRead();
-                            using var content = new StreamContent(stream) {
+                            await using var stream = file.OpenRead();
+                            using var content = new StreamContent(stream) { 
                                 Headers = {
                                     ContentType = new MediaTypeHeaderValue(contentType),
                                     ContentLength = file.Length,
