@@ -1,18 +1,11 @@
 using Blobify.Services.Storage;
-using Blobify.Tests.Fixture;
 using System.Runtime.CompilerServices;
 
 namespace Blobify.Tests.Unit.Services.Storage;
 
 public class TokenServiceTests
 {
-    public Uri BaseUri { get; private set; }
-
-    [SetUp]
-    public void Setup()
-    {
-        BaseUri = new Uri(Constants.Request.BaseUri, "Services/Storage/TokenServiceTests/");
-    }
+    public Uri BaseUri { get; private set; }= new Uri(Constants.Request.BaseUri, "Services/Storage/TokenServiceTests/");
 
     private Uri GetUri(
         [CallerMemberName]
@@ -23,7 +16,7 @@ public class TokenServiceTests
     public async Task GetAsync()
     {
         // Given
-        var tokenService = BlobifyServiceProviderFixture.GetRequiredService<TokenService>();
+        var tokenService = ServiceProviderFixture.GetRequiredService<TokenService>();
 
         // When
         var result = await tokenService.GetAsync<string>(
@@ -39,7 +32,7 @@ public class TokenServiceTests
     public async Task HeadAsync()
     {
         // Given
-        var tokenService = BlobifyServiceProviderFixture.GetRequiredService<TokenService>();
+        var tokenService = ServiceProviderFixture.GetRequiredService<TokenService>();
 
         // When
         var result = await tokenService.HeadAsync(
@@ -55,7 +48,7 @@ public class TokenServiceTests
     public async Task PutAsync()
     {
         // Given
-        var tokenService = BlobifyServiceProviderFixture.GetRequiredService<TokenService>();
+        var tokenService = ServiceProviderFixture.GetRequiredService<TokenService>();
 
         // When
         var result = await tokenService.PutAsync(

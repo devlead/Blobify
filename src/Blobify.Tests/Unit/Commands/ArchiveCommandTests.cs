@@ -1,6 +1,5 @@
 ﻿using Blobify.Commands;
 using Blobify.Commands.Settings;
-using Blobify.Tests.Fixture;
 
 namespace Blobify.Tests.Unit.Commands;
 public class ArchiveCommandTests
@@ -11,7 +10,7 @@ public class ArchiveCommandTests
         public async Task ExecuteAsync()
         {
             // Given
-            var (archiveCommand, settings) = BlobifyServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings>();
+            var (archiveCommand, settings) = ServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings>();
 
             // When
             var result = await archiveCommand.ExecuteAsync(
@@ -32,7 +31,7 @@ public class ArchiveCommandTests
         public async Task ExecuteAsync(string content)
         {
             // Given
-            var (archiveCommand, settings, fileSystem) = BlobifyServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings, FakeFileSystem>();
+            var (archiveCommand, settings, fileSystem) = ServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings, FakeFileSystem>();
             var file = fileSystem.CreateFile("/Working/InputPath/ExistingFile.json").SetContent(content);
 
             // When
@@ -59,7 +58,7 @@ public class ArchiveCommandTests
         public async Task ExecuteAsync()
         {
             // Given
-            var (archiveCommand, settings, fileSystem) = BlobifyServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings, FakeFileSystem>();
+            var (archiveCommand, settings, fileSystem) = ServiceProviderFixture.GetRequiredService<ArchiveCommand, ArchiveSettings, FakeFileSystem>();
             var file = fileSystem.CreateFile("/Working/InputPath/NewFile.json").SetContent("\"NewFile\"");
 
             // When
