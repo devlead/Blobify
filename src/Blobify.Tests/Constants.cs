@@ -1,9 +1,6 @@
-﻿using Blobify.Tests.Fixture;
-using Microsoft.Extensions.Primitives;
+﻿namespace Blobify.Tests;
 
-namespace Blobify.Tests;
-
-public static class Constants
+public class Constants
 {
     public static class Request
     {

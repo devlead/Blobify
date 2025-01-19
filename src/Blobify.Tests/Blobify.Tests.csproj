@@ -22,12 +22,12 @@
   <ItemGroup>
     <PackageReference Include="Cake.Testing" />
     <PackageReference Include="coverlet.collector" PrivateAssets="all" />
+    <PackageReference Include="Devlead.Testing.MockHttp" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NSubstitute" />
     <PackageReference Include="NUnit.Analyzers" PrivateAssets="all" />
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />
-    <PackageReference Include="Verify.Http" />
     <PackageReference Include="Verify.NUnit" />
     <PackageReference Include="System.Text.Json" />
   </ItemGroup>
