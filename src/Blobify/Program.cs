@@ -1,29 +1,13 @@
-﻿using Microsoft.Extensions.Configuration.Memory;
-using Microsoft.Extensions.Configuration;
-using Spectre.Console.Cli.Extensions.DependencyInjection;
-using Azure.Core;
+﻿using Azure.Core;
 using Azure.Identity;
-using Blobify.Services.Storage;
 
-var serviceCollection = new ServiceCollection()
+public partial class Program
+{
+    static partial void AddServices(IServiceCollection services)
+    {
+        services
     .AddCakeCore()
-    .AddLogging(configure =>
-            configure
-                .AddSimpleConsole(opts =>
-                {
-                    opts.TimestampFormat = "yyyy-MM-dd HH:mm:ss ";
-                })
-                .AddConfiguration(
-                new ConfigurationBuilder()
-                    .Add(new MemoryConfigurationSource
-                    {
-                        InitialData = new Dictionary<string, string?>
-                        {
-                            { "LogLevel:System.Net.Http.HttpClient", "Warning" }
-                        }
-                    })
-                    .Build()
-            ))
+    
     .AddSingleton<AzureTokenService>(
         async (tenantId, scope) =>
         {
@@ -40,27 +24,18 @@ var serviceCollection = new ServiceCollection()
         }
     )
     .AddSingleton<ArchiveCommand>()
-    .AddSingleton<TokenService>();
+    .AddSingleton<Blobify.Services.Storage.TokenService>();
 
-serviceCollection.AddHttpClient();
+        services.AddHttpClient();
+    }
 
-using var registrar = new DependencyInjectionRegistrar(serviceCollection);
-var app = new CommandApp(registrar);
-
-app.Configure(
-    config =>
+    // Configure commands
+    static partial void ConfigureApp(AppServiceConfig appServiceConfig)
     {
-        config.UseAssemblyInformationalVersion();
-        config.SetApplicationName("blobify");
-        config.ValidateExamples();
+        appServiceConfig.SetApplicationName("blobify");
 
-        config.AddCommand<ArchiveCommand>("archive")
+        appServiceConfig.AddCommand<ArchiveCommand>("archive")
                 .WithDescription("Example Archive command.")
                 .WithExample(["archive", "inputpath", "storageaccountname"]);
-
-        config.SetExceptionHandler(
-            (ex, _) => AnsiConsole.WriteException(ex, ExceptionFormats.ShowLinks)
-            );
-    });
-
-return await app.RunAsync(args);
+    }
+}
