@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Azure.Identity" Version="1.13.2" />
-    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="0.16.0" />
+    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2025.2.12.81" />
     <PackageVersion Include="Cake.Common" Version="5.0.0" />
     <PackageVersion Include="Cake.Testing" Version="5.0.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
