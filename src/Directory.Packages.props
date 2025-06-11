@@ -9,7 +9,7 @@
     <PackageVersion Include="Cake.Common" Version="5.0.0" />
     <PackageVersion Include="Cake.Testing" Version="5.0.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="Devlead.Console" Version="2025.6.11.215" />
+    <PackageVersion Include="Devlead.Console" Version="2025.6.11.218" />
     <PackageVersion Include="Devlead.Testing.MockHttp" Version="2025.6.11.191" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.6" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
