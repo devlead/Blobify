@@ -4,21 +4,21 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Azure.Identity" Version="1.14.2" />
-    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2025.8.6.206" />
+    <PackageVersion Include="Azure.Identity" Version="1.16.0" />
+    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2025.9.10.253" />
     <PackageVersion Include="Cake.Common" Version="5.0.0" />
     <PackageVersion Include="Cake.Testing" Version="5.0.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="Devlead.Console" Version="2025.8.6.269" />
-    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2025.8.6.257" />
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.8" />
+    <PackageVersion Include="Devlead.Console" Version="2025.9.10.320" />
+    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2025.9.10.304" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.9" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="MimeTypes" Version="2.5.2" />
     <PackageVersion Include="NSubstitute" Version="5.3.0" />
-    <PackageVersion Include="NUnit" Version="4.3.2" />
-    <PackageVersion Include="NUnit.Analyzers" Version="4.9.2" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0" />
+    <PackageVersion Include="NUnit" Version="4.4.0" />
+    <PackageVersion Include="NUnit.Analyzers" Version="4.10.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="5.1.0" />
     <PackageVersion Include="Verify.Http" Version="7.0.0" />
-    <PackageVersion Include="Verify.NUnit" Version="30.5.0" />
+    <PackageVersion Include="Verify.NUnit" Version="30.11.0" />
   </ItemGroup>
 </Project>
