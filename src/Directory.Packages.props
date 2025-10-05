@@ -7,7 +7,7 @@
     <PackageVersion Include="Azure.Identity" Version="1.16.0" />
     <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2025.9.10.253" />
     <PackageVersion Include="Cake.Common" Version="5.1.0" />
-    <PackageVersion Include="Cake.Testing" Version="5.0.0" />
+    <PackageVersion Include="Cake.Testing" Version="5.1.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="Devlead.Console" Version="2025.9.11.330" />
     <PackageVersion Include="Devlead.Testing.MockHttp" Version="2025.9.10.304" />
