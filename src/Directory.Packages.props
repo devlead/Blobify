@@ -19,6 +19,6 @@
     <PackageVersion Include="NUnit.Analyzers" Version="4.11.2" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.2.0" />
     <PackageVersion Include="Verify.Http" Version="7.4.0" />
-    <PackageVersion Include="Verify.NUnit" Version="31.5.1" />
+    <PackageVersion Include="Verify.NUnit" Version="31.5.2" />
   </ItemGroup>
 </Project>
