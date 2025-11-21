@@ -15,7 +15,8 @@ public class ArchiveCommandTests
             // When
             var result = await archiveCommand.ExecuteAsync(
                 null!,
-                settings
+                settings,
+                TestContext.Current.CancellationToken
                 );
 
             // Then
@@ -37,7 +38,8 @@ public class ArchiveCommandTests
             // When
             var result = await archiveCommand.ExecuteAsync(
                 null!,
-                settings
+                settings,
+                TestContext.Current.CancellationToken
                 );
 
             // Then
@@ -64,7 +66,8 @@ public class ArchiveCommandTests
             // When
             var result = await archiveCommand.ExecuteAsync(
                 null!,
-                settings
+                settings,
+                TestContext.Current.CancellationToken
                 );
 
             // Then
