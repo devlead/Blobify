@@ -12,7 +12,7 @@ public class ArchiveCommand(
         TokenService tokenService
 ) : AsyncCommand<ArchiveSettings>
 {
-    public override async Task<int> ExecuteAsync(CommandContext context, ArchiveSettings settings)
+    public override async Task<int> ExecuteAsync(CommandContext context, ArchiveSettings settings, CancellationToken cancellationToken)
     {
         if (settings.InputPath.IsRelative)
         {
@@ -38,7 +38,7 @@ public class ArchiveCommand(
 
         var containerUrl = settings.GetAzureStorageBlobUrl();
 
-        switch (await tokenService.HeadAsync(settings.AzureTenantId, new Uri(containerUrl, "?restype=container")))
+        switch (await tokenService.HeadAsync(settings.AzureTenantId, new Uri(containerUrl, "?restype=container"), cancellationToken))
         {
             case (HttpStatusCode.NotFound, _, _):
                 logger.LogInformation("Container {AzureStorageAccount}/{AzureStorageAccountContainer} not found, creating...", settings.AzureStorageAccount, settings.AzureStorageAccountContainer);
@@ -54,6 +54,7 @@ public class ArchiveCommand(
 
         await Parallel.ForEachAsync(
             files,
+            cancellationToken,
             async (filePath, ct) =>
             {
                 var targetPath = settings.InputPath.GetRelativePath(filePath);

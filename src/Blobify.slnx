@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/.SolutionItems/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="Blobify.Tests/Blobify.Tests.csproj" />
+  <Project Path="Blobify/Blobify.csproj" />
+</Solution>
