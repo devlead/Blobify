@@ -26,11 +26,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install .NET SDK 8.0.x
+      - name: Install .NET SDK 8.0.x - 9.0.x
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: |
             8.0.x
+            9.0.x
 
       - name: Install .NET SDK
         uses: actions/setup-dotnet@v5
@@ -60,5 +61,5 @@ jobs:
           AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_STORAGE_ACCOUNT }}
           AZURE_STORAGE_ACCOUNT_CONTAINER: ${{ secrets.AZURE_STORAGE_ACCOUNT_CONTAINER }}${{ matrix.os }}
         with:
-          cake-version: tool-manifest
+          file-path: cake.cs
           target: GitHub-Actions
