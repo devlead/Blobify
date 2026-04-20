@@ -8,7 +8,7 @@
     <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.3.2.498" />
     <PackageVersion Include="Cake.Common" Version="6.1.0" />
     <PackageVersion Include="Cake.Testing" Version="6.1.0" />
-    <PackageVersion Include="coverlet.collector" Version="8.0.1" />
+    <PackageVersion Include="coverlet.collector" Version="10.0.0" />
     <PackageVersion Include="Devlead.Console" Version="2026.2.11.575" />
     <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.2.11.605" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'"/>
