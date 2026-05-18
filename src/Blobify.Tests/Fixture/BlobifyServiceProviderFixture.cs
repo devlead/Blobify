@@ -6,6 +6,7 @@ using Blobify.Commands;
 using Blobify.Commands.Settings;
 using Devlead.Testing.MockHttp;
 using Blobify.Tests;
+using Spectre.Console.Cli;
 
 public static partial class ServiceProviderFixture
 {
@@ -18,7 +19,7 @@ public static partial class ServiceProviderFixture
                 (_, _) => Task.FromResult(new AccessToken(nameof(AccessToken), DateTimeOffset.UtcNow.AddDays(1)))
             )
             .AddSingleton<TokenService>()
-            .AddSingleton<ArchiveCommand>()
+            .AddSingleton<ICommand<ArchiveSettings>, ArchiveCommand>()
             .AddTransient(
                 _ => new ArchiveSettings
                 {
