@@ -20,6 +20,6 @@
     <PackageVersion Include="NUnit" Version="4.6.1" />
     <PackageVersion Include="NUnit.Analyzers" Version="4.14.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
-    <PackageVersion Include="Verify.NUnit" Version="31.28.0" />
+    <PackageVersion Include="Verify.NUnit" Version="32.0.0" />
   </ItemGroup>
 </Project>
