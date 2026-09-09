@@ -5,21 +5,21 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />
-    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.6.10.661" />
+    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.9.9.779" />
     <PackageVersion Include="Cake.Common" Version="6.2.0" />
     <PackageVersion Include="Cake.Testing" Version="6.2.0" />
     <PackageVersion Include="coverlet.collector" Version="10.0.1" />
-    <PackageVersion Include="Devlead.Console" Version="2026.7.15.820" />
-    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.7.15.880" />
+    <PackageVersion Include="Devlead.Console" Version="2026.9.9.890" />
+    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.9.9.935" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'"/>
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.18" Condition="'$(TargetFramework)' == 'net9.0'"/>
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.10" Condition="'$(TargetFramework)' == 'net10.0'"/>
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.20" Condition="'$(TargetFramework)' == 'net9.0'"/>
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.12" Condition="'$(TargetFramework)' == 'net10.0'"/>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.0" />
     <PackageVersion Include="MimeTypes" Version="2.5.2" />
-    <PackageVersion Include="NSubstitute" Version="6.0.0" />
+    <PackageVersion Include="NSubstitute" Version="6.2.0" />
     <PackageVersion Include="NUnit" Version="4.6.1" />
     <PackageVersion Include="NUnit.Analyzers" Version="4.14.0" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
-    <PackageVersion Include="Verify.NUnit" Version="31.24.2" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="6.3.0" />
+    <PackageVersion Include="Verify.NUnit" Version="32.0.0" />
   </ItemGroup>
 </Project>
