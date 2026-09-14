@@ -8,8 +8,8 @@
   <ItemGroup>
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />
     <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.9.9.779" />
-    <PackageVersion Include="Cake.Common" Version="6.2.0" />
-    <PackageVersion Include="Cake.Testing" Version="6.2.0" />
+    <PackageVersion Include="Cake.Common" Version="6.3.0" />
+    <PackageVersion Include="Cake.Testing" Version="6.3.0" />
     <PackageVersion Include="coverlet.collector" Version="10.0.1" />
     <PackageVersion Include="Devlead.Console" Version="2026.9.9.890" />
     <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.9.9.935" />
