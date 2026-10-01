@@ -12,7 +12,7 @@ public class ArchiveCommand(
         TokenService tokenService
 ) : AsyncCommand<ArchiveSettings>
 {
-    protected override async Task<int> ExecuteAsync(CommandContext context, ArchiveSettings settings, CancellationToken cancellationToken)
+    public override async Task<int> ExecuteAsync(CommandContext context, ArchiveSettings settings, CancellationToken cancellationToken)
     {
         if (settings.InputPath.IsRelative)
         {
