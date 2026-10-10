@@ -1,5 +1,7 @@
 # Blobify
 
+[![NuGet](https://img.shields.io/nuget/v/Blobify.svg)](https://www.nuget.org/packages/Blobify)
+
 Blobify is a .NET Global tool that archives (moves) files from a local folder to Azure Blob Storage container.
 
 ## Obtain
