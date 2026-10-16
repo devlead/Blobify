@@ -65,8 +65,8 @@ public record BuildData(
     public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureStorageAccount) &&
                                                 !string.IsNullOrWhiteSpace(AzureStorageAccountContainer) &&
                                                 (
-                                                    AzureCredentials.AzureCredentialsSpecified ||
                                                     IsLocalBuild
+                                                    || AzureCredentials.AzureCredentialsSpecified
                                                 );
 }
 
@@ -77,9 +77,15 @@ public record AzureCredentials(
     string? AuthorityHost = "login.microsoftonline.com"
 )
 {
-    public bool AzureCredentialsSpecified { get; } = !string.IsNullOrWhiteSpace(TenantId) &&
-                                                     !string.IsNullOrWhiteSpace(ClientId) &&
-                                                     !string.IsNullOrWhiteSpace(ClientSecret) &&
-                                                     !string.IsNullOrWhiteSpace(AuthorityHost);
+    public bool AzureCredentialsSpecified { get; } =
+        !string.IsNullOrWhiteSpace(TenantId)
+        && !string.IsNullOrWhiteSpace(ClientId)
+        && (
+            !string.IsNullOrWhiteSpace(ClientSecret)
+            || string.Equals(
+                System.Environment.GetEnvironmentVariable("TRUSTED_INGEST"),
+                "true",
+                StringComparison.OrdinalIgnoreCase)
+        );
 }
 internal record ExtensionHelper(Func<string, CakeTaskBuilder> TaskCreate, Func<CakeReport> Run);
