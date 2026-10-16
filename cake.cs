@@ -93,32 +93,44 @@ Task("NuGet-Login")
     )
 .Then("DPI")
     .Does<BuildData>(
-        static (context, data) => Command(
-                ["dpi", "dpi.exe"],
-                new ProcessArgumentBuilder()
-                    .Append("nuget")
-                    .Append("--silent")
-                    .AppendSwitchQuoted("--output", "table")
-                    .Append(
-                        (
-(
-                                !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_Endpoint"))
-                                &&
-                                !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_RuleId"))
-                            )
-                            ||
+        static (context, data) =>
+        {
+            // Integration tests keep AZURE_CLIENT_SECRET; DPI must use OIDC/Azure CLI instead of EnvironmentCredential.
+            var clientSecret = Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET");
+            Environment.SetEnvironmentVariable("AZURE_CLIENT_SECRET", null);
+            try
+            {
+                Command(
+                    ["dpi", "dpi.exe"],
+                    new ProcessArgumentBuilder()
+                        .Append("nuget")
+                        .Append("--silent")
+                        .AppendSwitchQuoted("--output", "table")
+                        .Append(
                             (
-                                !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_SharedKey"))
-                                &&
-                                !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_WorkspaceId"))
+                                (
+                                    !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_Endpoint"))
+                                    &&
+                                    !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_RuleId"))
+                                )
+                                ||
+                                (
+                                    !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_SharedKey"))
+                                    &&
+                                    !string.IsNullOrWhiteSpace(context.EnvironmentVariable("NuGetReportSettings_WorkspaceId"))
+                                )
                             )
-                        )
-                            ? "report"
-                            : "analyze"
-                        )
-                    .AppendSwitchQuoted("--buildversion", data.Version)
-                
-            )
+                                ? "report"
+                                : "analyze"
+                            )
+                        .AppendSwitchQuoted("--buildversion", data.Version)
+                );
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AZURE_CLIENT_SECRET", clientSecret);
+            }
+        }
     )
 .Then("Build")
     .Does<BuildData>(
