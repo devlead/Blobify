@@ -7,22 +7,22 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />
-    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.10.15.869" />
+    <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.10.26.892" />
     <PackageVersion Include="Cake.Common" Version="6.3.0" />
     <PackageVersion Include="Cake.Testing" Version="6.3.0" />
     <PackageVersion Include="coverlet.collector" Version="10.1.0" />
-    <PackageVersion Include="Devlead.Console" Version="2026.10.15.984" />
-    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.10.15.1037" />
+    <PackageVersion Include="Devlead.Console" Version="2026.10.26.1021" />
+    <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.10.26.1076" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'"/>
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.21" Condition="'$(TargetFramework)' == 'net9.0'"/>
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.13" Condition="'$(TargetFramework)' == 'net10.0'"/>
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="11.0.0-rc.2.26504.105" Condition="'$(TargetFramework)' == 'net11.0'"/>
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.22" Condition="'$(TargetFramework)' == 'net9.0'"/>
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.14" Condition="'$(TargetFramework)' == 'net10.0'"/>
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="11.0.0-rc.3.26522.148" Condition="'$(TargetFramework)' == 'net11.0'"/>
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
     <PackageVersion Include="MimeTypes" Version="2.5.2" />
     <PackageVersion Include="NSubstitute" Version="6.2.0" />
     <PackageVersion Include="NUnit" Version="5.0.0" />
     <PackageVersion Include="NUnit.Analyzers" Version="4.15.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="6.3.1" />
-    <PackageVersion Include="Verify.NUnit" Version="33.3.3" />
+    <PackageVersion Include="Verify.NUnit" Version="33.3.4" />
   </ItemGroup>
 </Project>
