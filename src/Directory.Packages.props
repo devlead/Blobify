@@ -10,7 +10,7 @@
     <PackageVersion Include="Cake.Bridge.DependencyInjection" Version="2026.11.12.920" />
     <PackageVersion Include="Cake.Common" Version="7.0.0" />
     <PackageVersion Include="Cake.Testing" Version="7.0.0" />
-    <PackageVersion Include="coverlet.collector" Version="10.1.0" />
+    <PackageVersion Include="coverlet.collector" Version="10.1.1" />
     <PackageVersion Include="Devlead.Console" Version="2026.11.12.1057" />
     <PackageVersion Include="Devlead.Testing.MockHttp" Version="2026.11.12.1105" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.15" Condition="'$(TargetFramework)' == 'net10.0'" />
